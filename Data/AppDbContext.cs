@@ -9,4 +9,5 @@ public class AppDbContext : DbContext
       : base(options) { }
 
   public DbSet<TaskItem> Tasks { get; set; }
+  public DbSet<Category> Categories { get; set; }
 }

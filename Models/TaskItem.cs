@@ -13,4 +13,10 @@ public class TaskItem
   public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
   public DateTime? DueDate { get; set; }
+
+  // Foreign key
+  public int? CategoryId { get; set; }
+
+  // Navigation property
+  public Category? Category { get; set; }
 }
