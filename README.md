@@ -33,11 +33,15 @@ TaskManagerApi/
 ├── Controllers/
 │   ├── TasksController.cs
 │   └── CategoriesController.cs
+│   ├── ProjectsController.cs
+│   └── UsersController.cs
 ├── Data/
 │   └── AppDbContext.cs
 ├── Models/
 │   ├── TaskItem.cs
 │   └── Category.cs
+│   ├── Project.cs
+│   └── User.cs
 ├── Migrations/
 ├── appsettings.json
 └── Program.cs
@@ -123,6 +127,31 @@ https://localhost:7158/swagger
 | `PUT`    | `/api/categories/{id}` | Update a category                   |
 | `DELETE` | `/api/categories/{id}` | Delete a category                   |
 
+### Users
+
+| Method   | Endpoint                     | Description                |
+| -------- | ---------------------------- | -------------------------- |
+| `GET`    | `/api/users`                 | Get all users              |
+| `GET`    | `/api/users/{id}`            | Get user by ID             |
+| `GET`    | `/api/users/{id}/tasks`      | Get tasks assigned to user |
+| `POST`   | `/api/users`                 | Create a new user          |
+| `PUT`    | `/api/users/{id}`            | Update a user              |
+| `PATCH`  | `/api/users/{id}/deactivate` | Deactivate a user          |
+| `PATCH`  | `/api/users/{id}/role`       | Update user role           |
+| `DELETE` | `/api/users/{id}`            | Delete a user              |
+
+### Projects
+
+| Method   | Endpoint                     | Description             |
+| -------- | ---------------------------- | ----------------------- |
+| `GET`    | `/api/projects`              | Get all active projects |
+| `GET`    | `/api/projects/{id}`         | Get project by ID       |
+| `GET`    | `/api/projects/{id}/tasks`   | Get tasks in a project  |
+| `POST`   | `/api/projects`              | Create a new project    |
+| `PUT`    | `/api/projects/{id}`         | Update a project        |
+| `PATCH`  | `/api/projects/{id}/archive` | Archive a project       |
+| `DELETE` | `/api/projects/{id}`         | Delete a project        |
+
 ---
 
 ## Example Requests
@@ -181,3 +210,4 @@ dotnet ef database update <MigrationName>
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+

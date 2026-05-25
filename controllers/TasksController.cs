@@ -71,7 +71,8 @@ public class TasksController : ControllerBase
   {
     var task = await _db.Tasks.FindAsync(id);
     if (task == null) return NotFound();
-    task.IsCompleted = true;
+    task.Status = TaskItemStatus.Done;
+    task.UpdatedAt = DateTime.UtcNow;
     await _db.SaveChangesAsync();
     return NoContent();
   }
